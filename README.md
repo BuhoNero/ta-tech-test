@@ -22,14 +22,14 @@ In those folders there’s a Unity Scene. While the structure is well-defined, i
 For best practices, I created a new folder structure:
 
 
-_Project
-  Animations
-  Audio
-    SFX
-  Materials
-  Prefabs
-  Scenes
-  Textures
+Project/
+├── Animations/
+├── Audio/
+│   └── SFX/
+├── Materials/
+├── Prefabs/
+├── Scenes/
+└── Textures/
 
 I also created a Unity scene called “Main”, for the test itself.
 
