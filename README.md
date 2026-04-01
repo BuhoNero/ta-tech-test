@@ -1,27 +1,24 @@
-Technical Artist - Tech Test (Luis Hostos)
+# Technical Artist — Tech Test
+**Luis Hostos**
 
-**Git repository Main:**
+---
 
-https://github.com/BuhoNero/ta-tech-test
+## 🔗 Links
 
-**Branch:**
+| | |
+|---|---|
+| **Repository** | https://github.com/BuhoNero/ta-tech-test |
+| **Branch** | `polish/play-button` |
+| **Pull Request** | https://github.com/BuhoNero/ta-tech-test/pull/1 |
 
-polish/play-button
+---
 
-**Pull Request:**
+## 📁 Project Structure
 
-https://github.com/BuhoNero/ta-tech-test/pull/1
+The original project folder structure corresponds to a Unity package downloaded from the Asset Store. While the structure is well-defined, working directly in it presents a risk — assets could be accidentally overwritten when reimporting or updating the package.
 
-
-**Project structure**
-
-The original project folder structure corresponds to a Unity package downloaded from the Asset Store. 
-
-In those folders there’s a Unity Scene. While the structure is well-defined, it presents a risk, as working directly in it could result on accidentally replacing work, either when reimporting or updating the original package from the Asset Store. 
-
-For best practices, I created a new folder structure:
-
-
+Following best practices, I created a clean, separate folder structure:
+```
 Project/
 ├── Animations/
 ├── Audio/
@@ -30,34 +27,44 @@ Project/
 ├── Prefabs/
 ├── Scenes/
 └── Textures/
+```
 
-I also created a Unity scene called “Main”, for the test itself.
+I also created a Unity scene called **Main** for the test itself.
 
-**Game Juice**
+---
 
-As shown in the demo scene I added animations to the several elements.
+## ✨ Game Juice
 
-Also imported a third party extension to facilitate Particles in UI canvases: (https://github.com/mob-sakai/ParticleEffectForUGUI)
+Animations were added to several UI elements, as shown in the demo scene.
 
-**UI**
+A third-party extension was imported to support Particle Systems on UI canvases:
+👉 [ParticleEffectForUGUI](https://github.com/mob-sakai/ParticleEffectForUGUI)
 
-For the test purposes, I removed buttons that weren’t visible
-I created new prefabs and reorganized slighty to include the Animations and SFX needed.
+---
 
-**Performance optimization**
+## 🖼️ UI
 
-Not much to optimize at this point, the scene itself is very light. Around 29 draw calls, and high FPS at the moment (pc editor)
+- Removed buttons that weren't visible
+- Created new prefabs and reorganized the hierarchy slightly to accommodate the required animations and SFX
 
-Sprite Atlases could be used if there are several individual sprites, that could be packed into a single texture and then compressed due to a power of two image size.
+---
 
-**Pipeline optimization**
+## ⚡ Performance Optimization
 
-Artist should have a basic training on how to export assets for Unity. Some examples:
-Working on the exact resolution needed for a target device (Mobile Phone)
-Prepare buttons, panels, backgrounds and other to be 9-sliced or other common slice settings
-Prepare assets that need to be colored dynamically in grayscale
-Prepare textures that might support power of two sizes, for compression.
-In the case of UI, prepare assets to support for multiple aspect ratios 
+The scene is very light at this stage — approximately **29 draw calls** and high FPS in the PC editor. No significant optimization is needed yet.
 
+**Potential improvement:** Sprite Atlases could be used if individual sprites multiply — packing them into a single power-of-two texture enables better compression.
 
-Assuming the project is in 2D, sprite based, I would create a texture import settings preset and set is default, this way, every texture imported will automatically be setup as a 2D sprite. 
+---
+
+## 🔧 Pipeline Optimization
+
+Artists should have basic training on exporting assets for Unity. Key recommendations:
+
+- **Target resolution** — Work at the exact resolution needed for the target device (e.g. mobile)
+- **Slicing** — Prepare buttons, panels, and backgrounds for 9-slice or other common slice configurations
+- **Dynamic coloring** — Export assets that need runtime tinting in grayscale
+- **Compression-friendly textures** — Use power-of-two sizes where possible
+- **Aspect ratio support** — Design UI assets to adapt across multiple screen ratios
+
+**Workflow tip:** For a 2D sprite-based project, I would create a **Texture Import Settings preset** and set it as the project default — this ensures every imported texture is automatically configured as a 2D Sprite, saving time and reducing inconsistencies.
